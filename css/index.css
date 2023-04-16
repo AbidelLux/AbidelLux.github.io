@@ -1,0 +1,61 @@
+
+  body {
+    font-family: "Lucida Bright", Georgia, serif;
+    background-color: #03053e;
+    color: #000000;
+    padding-top: 10%;
+  }
+  
+  .login-container {
+    width: 400px;
+    margin: 0 auto;
+    background-color: #5e61f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-bottom: 10px;
+  }
+  
+  input {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+  }
+  
+  .btn-personalizado{
+    color: #000000;
+    background-color: #4547bf;
+    border: 1px;
+    border-color: #000000;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  
+  
+  .btn-personalizado:active  {
+    background-color: #03053e; 
+    border-color: #000000; 
+  }
+  
+  button:hover {
+    background-color: #03053e;
+  }

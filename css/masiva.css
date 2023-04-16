@@ -1,0 +1,108 @@
+
+.container {
+    padding-top: 1%;
+}
+
+
+.bg-contenedor {
+    background-color: #240459;
+    /* background-image: url('1.jpg'); */
+    background-size: cover;
+    padding-top: 30px; 
+    padding-bottom: 20px;
+    padding-right: 80px;
+    padding-left: 80px;
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.bg-contenedor-2 {
+    background-color: #240459;
+    /* background-image: url('1.jpg'); */
+    background-size: cover;
+    padding: 40px;
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.bg-contenedor-3 {
+    background-color: #240459;
+    /* background-image: url('1.jpg'); */
+    background-size: cover;
+    padding-top: 30px; 
+    padding-bottom: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.bg-fondo {
+    background-color: #140333;
+    color: #E8D4B5;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    padding-right: 50px;
+    padding-left: 50px;
+    font-family:"Lucida Bright", Georgia, serif;
+}
+
+#encabezados {
+    text-align: center;
+    font-family:"Lucida Bright", Georgia, serif;
+}
+
+#graph {
+    border-radius: 20px;
+    max-width: 100%;
+    padding-bottom: 1cm;
+}
+
+.bg-encabezado {
+    background-color: #240459;
+    border-color: #140333;
+    border-radius: 20px;
+}
+
+.btn-personalizado {
+    background-color: #560BD9;
+    /* 560BD9 */
+    border-color: #140333;
+    color:#E8D4B5;
+    border-radius: 20px;
+    max-width: 100%;
+    display:  inline-block;
+    margin: 0 auto;
+    
+
+}
+
+a {
+    text-decoration: none;
+    color:#E8D4B5;
+  }
+
+a:hover{
+    text-decoration: none;
+    color:#fff;
+}
+
+.btn-personalizado:hover {
+    background-color: #471799; /* nuevo color de fondo */
+    border-color: #140333; /* nuevo color del borde */
+    color:#fff;
+    border-radius: 20px;
+    max-width: 100%;
+    display:  inline-block;
+    margin: 0 auto;
+    
+}
+
+.img {
+    align-items: center;
+}
+
+ 
