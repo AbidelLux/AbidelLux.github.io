@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../backend/img/k.png" type="image/png">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Perfil Administrador</title>
+    <link rel="stylesheet" type="text/css" href="administrador.css">
+    
+</head>
+<body class="bg-fondo">
+    
+    
+        <div class="container bg-contenedor-2">
+            <div>
+                <img class="img"><img src="../../backend/img/logo.png" width="100%" >
+            </div>
+        </div>
+
+    <div class="mt-5 mb-5" style="text-align: center;">
+        <div>
+            <h1 id="encabezados" style="font-size: 64px; text-align: center; padding-top: 2%;">Dashboard Administrador</h1>
+        </div>
+        <br>
+        <hr>
+        <button  class="btn btn-personalizado mt-1" style="width: 15%;"><a href="#S1">Subir Estudiantes</a></button>
+        <button  class="btn btn-personalizado mt-1"><a href="#S2">Estudiantes Cargados</a></button>
+        <button  class="btn btn-personalizado mt-1"><a href="#S3">Permisos Otorgados</a></button>
+        <button  class="btn btn-personalizado mt-1"><a href="#S3">Reporte de Bloques</a></button>
+        <button onclick="reinicio()" class="btn btn-personalizado mt-1"><a href="../../../index.html">Cerrar Sesión</a></button>
+    </div>
+
+    <div id="S1" class="container bg-contenedor"><!-- class="row" -->
+        <div ><!-- class="col-4" -->
+            <h2>Subir estudiantes</h2>
+            <hr>
+            <form class="form" onsubmit="loadStudentsForm(event)">
+                <input type="file" id="inputFile" name="inputFile" class="form-control" placeholder="Pos. X">
+                <div class="form-group mt-4" id="botongraph" style="text-align: center;">
+                    <button type="submit" class="btn w-25 btn-personalizado">Cargar Alumnos</button>
+                    <button onclick="showGraphBlock()" class="btn w-25 btn-personalizado">Reporte De Mensajes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <br>
+    
+    <div  id="S2" class="container bg-contenedor">
+        <div>
+            <div>
+                <h2>Estudiantes cargados </h2>
+            </div>
+            <hr>
+            <div id="studentsTable">
+                <table class="table text-light">
+                    <thead>
+                        <tr>
+                            <th scope="col">Carnet</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Contraseña</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <div class="row">
+                <div class="col-7"></div>
+                <div class="col-2" id="Espacios"></div>
+                <div class="col-3" id="Espacios2"></div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    
+    <div id="S3" class="container bg-contenedor">
+        <div class="container">
+            <h2>Permisos</h2>
+        </div>
+        <div id="studentsPermisos">
+            <table class="table text-light">
+                
+                <thead>
+                    <colgroup>
+                    <col style="width: 15%;">
+                    <col style="width: 15%;">
+                    <col style="width: 40%;">
+                    <col style="width: 20%;">
+                    <col style="width: 10%;">
+                  </colgroup>
+                    <tr>
+                        <th scope="col">Propietario</th>
+                        <th scope="col">Destino</th>
+                        <th scope="col">Ubicación</th>
+                        <th scope="col">Archivo</th>
+                        <th scope="col">Permisos</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="mt-5" id="S6">
+        <h3 class="text-center">
+            Reporte de Bloques
+            <button class="btn btn-personalizado mt-1 " onclick="getBlock(0)"> Mostrar Nodo Inicial</button>
+        </h3>
+        <hr/>
+        <div class="row">
+            <div class="col-2">
+                <button class="btn btn-danger btn-personalizado mt-1 w-100" onclick="getBlock(-1)"> << Anterior</button>
+            </div>
+            <div class="col-8" id="show-block">
+
+            </div>
+            <div class="col-2">
+                <button class="btn btn-danger btn-personalizado mt-1 w-100" onclick="getBlock(1)"> Siguiente >></button>
+            </div>
+        </div>
+    </div>
+
+    <div id="reportt" class="container">
+        
+    </div>
+    <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" 
+    crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" 
+    integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" 
+    crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" 
+    integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" 
+    crossorigin="anonymous"></script>
+
+
+    <!-- Librerias-->
+    <script src="../../backend/Hash.js"></script>
+    <script src="../../backend/lib/cycle.js"></script>
+    <!-- Importar Estructuras -->
+    <script src="../../backend/avl.js"></script>
+    <script src="../../backend/BlockChain.js"></script>
+    <script src="../../backend/BlockChainIndex.js"></script>
+    <!-- Importar Archivo Principal -->
+    <script src="../../backend/indelx.js"></script>
+
+    <!-- Importar Estructuras -->
+    <script src="../../backend/lista.js"></script>
+    <script src="../../backend/Matriz_Dispersa2.js"></script>
+    <script src="../../backend/n-ary-tree.js"></script>
+    <!-- Importar Archivo Principal -->
+    <script src="../../backend/N_ario.js"></script>
+    
+    <script src="../../backend/retorno.js"></script>
+    <script src="../../backend/ArchivPrueba/aes.js"></script>
+    <script src="../../backend/aes.js"></script>
+    <script src="../../backend/aes-min.js"></script>
+
+</body>
+</html>
